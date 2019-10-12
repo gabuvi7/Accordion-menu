@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background: linear-gradient(162deg, #c8d6e5, #3b4754);
+  height: 100vh;
+  color: white;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu {
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.item {
+  border-top: 1px solid #10ac84;
+  overflow: hidden;
+}
+
+.btn {
+  display: block;
+  padding: 16px 20px;
+  background-color: #1dd1a1;
+  color: black;
+  position: relative;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #1dd1a1;
+  left: 20px;
+  bottom: -8px;
+  transform: rotate(45deg);
+}
+
+.btn i{
+    margin-right: 10px;
+}
+
+.subMenu{
+    background: #000000;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
+}
+
+
+.subMenu a{
+    display: block;
+    padding: 16px 26px;
+    color: white;
+    font-size: 14px;
+    position: relative;
+    margin: 4px 0;
+}
+
+.subMenu a::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 6px;
+    background: #1dd1a1;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.subMenu a:hover::before{
+    opacity: 1;
+}
+
+.item:target .subMenu{
+    max-height: 10em;
+}
